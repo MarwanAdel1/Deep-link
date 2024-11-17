@@ -213,7 +213,7 @@ To test the deep linking functionality:
 ## Testing
 
 - <b>Before testing</b>, install the Flutter app
-  - Using adb command:
+  - To test on<b>Emulator/Simulator</b> Using adb command:
     - For iOS
       ```rb
        xcrun simctl openurl booted "https://deeplink-testing.com"
@@ -223,7 +223,7 @@ To test the deep linking functionality:
        adb shell am start -W -a android.intent.action.VIEW -d "https://deeplink-testing.com" com.example.deep_links_poc
       ```
 
-  - To test the deep linking features, follow these steps:
+  - To test on <b>Physical devices</b>, follow these steps:
     - <b>Test Case 1: Deep Link with App Installed:</b>
       1. Open a deep link in any external app (e.g., note,...).
       2. The app should open and navigate directly to the specific content, such as a product details page.
