@@ -6,6 +6,20 @@ This project demonstrates the integration of deep linking in a mobile applicatio
 
 <br>
 
+## 📙 Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [Installation](#installation)
+3. [Deep Link Configuration](#deep-link-configuration)
+4. [Deep Linking with URI Scheme](#deep-linking-with-uri-scheme)
+5. [Server Configuration](#server-configuration)
+6. [How to use the App](#how-to-use-the-app)
+7. [Usage](#usage)
+8. [Testing](#testing)
+9. [Known Issues](#known-issues)
+
+<br>
+
 ## Prerequisites
 To run this app locally, the following tools are required:
 - Android Studio for Android development
@@ -65,15 +79,25 @@ Deep links are URLs that open specific content or pages inside your app.
 
 <br>
 
-## Deep Link Example:
+## Deep Linking with URI Scheme:
+A URI scheme is a custom protocol defined by the app to handle specific URLs. The format is
+```
+<scheme>://<host>/<path>?<query_parameters>
+```
+  - Scheme: Custom protocol for your app (e.g., myapp://).
+  - Host: Domain-like identifier (e.g., product).
+  - Path: Defines specific sections of the app (e.g., /details).
+  - Query Parameters: Additional data passed in the link (e.g., ?id=123).
 
-- Home page deep link:- https://deeplink-testing.com
-- Products list page deep link:- https://deeplink-testing.com?screen=product-list
-- Product details page deep link:- https://deeplink-testing.com?screen=product-details&id=5
-
-  - ### How to add new deep links:
-    - For iOS, update the app's <b>Associated Domains</b>.
-    - For Android, modify the ``` AndroidManifest.xml ``` to include a new ``` <intent-filter> ``` for each link scheme.
+  ### Example:
+  A link like myapp://product/details?id=123 can:
+  - Open the app.
+  - Navigate to the details page under the product section.
+  - Pass id=123 as a parameter to fetch specific product details.
+  
+  ### How to add new deep links:
+  - <b>For iOS,</b> update the app's <b>Associated Domains</b>.
+  - <b>For Android,</b> modify the ``` AndroidManifest.xml ``` to include a new ``` <intent-filter> ``` for each link scheme.
 
 <br>
 
@@ -216,17 +240,3 @@ To test the deep linking functionality:
 1. <b>Android 12+ Compatibility:</b> Some issues may arise with App Links in Android 12 and above due to strict app verification policies.
 2. <b>Universal Link Fallback:</b> In rare cases, Universal Links may not work on older iOS versions. Ensure your users are on iOS 9 or later.
 3. <b>Custom URL Scheme Handling:</b> If other apps are registered to handle the same custom scheme (myapp://), conflicts may arise. Ensure your scheme is unique to your app.
-
-<br>
-
-## 📙 Table of Contents
-
-1. [Prerequisites](#prerequisites)
-2. [Installation](#installation)
-3. [Deep Link Configuration](#deep-link-configuration)
-4. [Deep Link Example](#deep-link-example)
-5. [Server Configuration](#server-configuration)
-6. [How to use the App](#how-to-use-the-app)
-7. [Usage](#usage)
-8. [Testing](#testing)
-9. [Known Issues](#known-issues)
